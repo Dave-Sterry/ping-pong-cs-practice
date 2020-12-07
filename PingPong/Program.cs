@@ -1,38 +1,40 @@
 //UI logic
 using System;
 using System.Collections.Generic;
-using PingPong.Models;
+//using PingPong.Models;
 
 class PingPong
 {
     static void Main()
     {
-        Console.WriteLine("Pleasea enter a number:"); 
+        Console.WriteLine("Please enter a number:"); 
         string stringNumber = Console.ReadLine();
         int number = int.Parse(stringNumber);
 
-        List<int> numberList = new List<int> {};
+        List<string> numberList = new List<string>() {};
 
-        for (int i = 0; i < number; i++)
+        for (int i = 1; i <= number; i++)
         {
-            if (i % 3 == 0)
+            if (i % 5 == 0 && i % 3 == 0)
             {
-                numberList.Add("ping");
+                numberList.Add("ping-pong");
             }
             else if (i % 5 == 0)
             {
                 numberList.Add("pong");
             }
-            else if (i % 5 && i % 3)
+            else if (i % 3 == 0)
             {
-                numberList.Add("ping-pong")
+                numberList.Add("ping");
             }
             else
-            {
-                numberList.Add(i);
+            {    
+                numberList.Add(i.ToString());
             }
         }
- 
-
+        foreach (string x in numberList)
+        {
+            Console.WriteLine(x);
+        }
     }
 }
